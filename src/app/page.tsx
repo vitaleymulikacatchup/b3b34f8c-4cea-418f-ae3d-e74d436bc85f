@@ -378,22 +378,3 @@ export default function MedicalWorkshopPage() {
     </ThemeProvider>
   );
 }
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <PostHogWrapper>
-        <body
-          className={`${interTight.variable} ${inter.variable} antialiased`}
-        >
-          <Tag />
-          {children}
-        </body>
-      </PostHogWrapper>
-    </html>
-  );
-}
