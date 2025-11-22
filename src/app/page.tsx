@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { ThemeProvider } from "@/providers/themeProvider/ThemeProvider";
 import NavbarLayoutFloatingInline from '@/components/navbar/NavbarLayoutFloatingInline';
 import HeroOverlay from '@/components/sections/hero/HeroOverlay';
@@ -283,7 +283,6 @@ export default function MedicalWorkshopPage() {
           tagIcon={HelpCircle}
           textboxLayout="default"
           animationType="smooth"
-          showCard={true}
           faqs={[
             {
               id: "1",
@@ -377,5 +376,24 @@ export default function MedicalWorkshopPage() {
         />
       </div>
     </ThemeProvider>
+  );
+}
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <PostHogWrapper>
+        <body
+          className={`${interTight.variable} ${inter.variable} antialiased`}
+        >
+          <Tag />
+          {children}
+        </body>
+      </PostHogWrapper>
+    </html>
   );
 }
